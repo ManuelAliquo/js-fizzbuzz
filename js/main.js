@@ -8,13 +8,13 @@
 
 let output;
 
-for (let number = 1; number <= 100; number++) {
-  if (number % 3 === 0 && number % 5 != 0) {
-    output = "Fizz";
-  } else if (number % 5 === 0 && number % 3 != 0) {
-    output = "Buzz";
-  } else if (number % 3 === 0 && number % 5 === 0) {
+for (let number = 1; number <= 30 /*100*/; number++) {
+  if (number % 3 === 0 && number % 5 === 0) {
     output = "FizzBuzz";
+  } else if (number % 5 === 0) {
+    output = "Buzz";
+  } else if (number % 3 === 0) {
+    output = "Fizz";
   } else {
     output = number;
   }
