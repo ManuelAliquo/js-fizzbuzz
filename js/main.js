@@ -7,15 +7,29 @@
 //   - Altrimenti dovrà stampare i numeri "normali";
 
 for (let number = 1; number <= 100; number++) {
-  let output = "";
-  if (number % 3 === 0) {
-    output += "Fizz";
+  const isFizz = number % 3 === 0;
+  const isBuzz = number % 5 === 0;
+
+  let outputMsg = "";
+
+  let outputR = 0;
+  let outputG = 0;
+  let outputB = 0;
+  let outputColor = "";
+
+  if (isFizz) {
+    outputMsg += "Fizz";
+    outputR = 255;
   }
-  if (number % 5 === 0) {
-    output += "Buzz";
+  if (isBuzz) {
+    outputMsg += "Buzz";
+    outputB = 255;
   }
-  if (output === "") {
-    output = number;
+  if (!outputMsg) {
+    outputMsg = number;
+    outputB = 255;
   }
-  console.log(output);
+
+  outputColor = `color: rgb(${outputR}, ${outputG}, ${outputB})`;
+  console.log("%c" + outputMsg, outputColor);
 }
